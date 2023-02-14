@@ -197,21 +197,6 @@ components:
           Another team that has no `type` specified.
     # Kronicle supports custom platforms
     platform: kubernetes
-    # The `dependencies` section is optional. It describes dependencies between this component and other components. It can be used to describe things like:
-    #
-    # 1. Dependencies between microservices
-    # 2. A dependency from a mobile app to an API gateway
-    # 3. A dependency from a microservice to a database or queue
-    # 4. A dependency between a database and the database server that hosts it
-    #
-    # Note, some dependencies can be automatically detected using distributed tracing systems like Zipkin, without having to specify those dependencies here.
-    dependencies:
-      - targetComponentId: example-component-2
-      - targetComponentId: example-component-3
-        # This is an `inbound` dependency. The direction of this dependency is in the opposite direction to a normal dependency. It specifies that component
-        # `example-4` is dependent on this component, and not the other way around.
-      - targetComponentId: example-component-4
-        direction: inbound
     # The `crossFunctionalRequirements` section is optional. It describes the cross functional requirements (i.e. non-functional requirements) for the
     # component. See https://sarahtaraporewalla.com/agile/design/decade_of_cross_functional_requirements_cfrs for some background to the concept of cross
     # functional requirements.
